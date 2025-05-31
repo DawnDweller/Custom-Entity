@@ -1,0 +1,9 @@
+@EndUserText.label : 'FI008 - Müşteri Mutabakat Response'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+define structure zfi007_s_mus_sat_response {
+
+  filename    : abap.string(0);
+  filecontent : abap.string(0);
+  tracestring : abap.string(0);
+
+}
