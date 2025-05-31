@@ -1,0 +1,19 @@
+@EndUserText.label : 'FI008 - Çıktı Alanları'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+define structure zfi007_s_mus_sat_print {
+
+  customer_name     : name1_gp;
+  supplier_name     : name1_gp;
+  company_code      : bukrs;
+  tax_number1       : stcd1;
+  tax_number2       : stcd2;
+  telephone_number1 : telf1;
+  fax_number        : telfx;
+  posting_date      : budat;
+  @Semantics.amount.currencyCode : 'zfi007_s_mus_sat_print.currency'
+  debit_amount      : abap.curr(13,2);
+  @Semantics.amount.currencyCode : 'zfi007_s_mus_sat_print.currency'
+  credit_amount     : abap.curr(13,2);
+  currency          : waers;
+
+}
