@@ -1,0 +1,180 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "zfi007mutabakat.zfi007mutabakat",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.17.6",
+      "toolsId": "4e6704fc-e894-48b0-a6aa-1ffc33f63a2c"
+    },
+    "dataSources": {
+      "annotation": {
+        "type": "ODataAnnotation",
+        "uri": "annotations/annotation.xml",
+        "settings": {
+          "localUri": "annotations/annotation.xml"
+        }
+      },
+      "mainService": {
+        "uri": "/sap/opu/odata4/sap/zfi007_ui_mus_sat_mutabakat_o4/srvd/sap/zfi007_ui_mus_sat_mutabakat/0001/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "annotation"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "zfi007mutabakat-manage": {
+          "semanticObject": "zfi007mutabakat",
+          "action": "manage",
+          "title": "{{zfi007mutabakat-manage.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.130.10",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "zfi007mutabakat.zfi007mutabakat.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "ZFI007_R_MUS_SAT_MUTABAKATList",
+          "target": "ZFI007_R_MUS_SAT_MUTABAKATList"
+        },
+        {
+          "pattern": "ZFI007_R_MUS_SAT_MUTABAKAT({key}):?query:",
+          "name": "ZFI007_R_MUS_SAT_MUTABAKATObjectPage",
+          "target": "ZFI007_R_MUS_SAT_MUTABAKATObjectPage"
+        }
+      ],
+      "targets": {
+        "ZFI007_R_MUS_SAT_MUTABAKATList": {
+          "type": "Component",
+          "id": "ZFI007_R_MUS_SAT_MUTABAKATList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/ZFI007_R_MUS_SAT_MUTABAKAT",
+              "variantManagement": "Page",
+              "navigation": {
+                "ZFI007_R_MUS_SAT_MUTABAKAT": {
+                  "detail": {
+                    "route": "ZFI007_R_MUS_SAT_MUTABAKATObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  },
+                  "actions": {
+                    "extension": {
+                      "press": "zfi007mutabakat.zfi007mutabakat.ext.controller.extension.ciktiAl",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": true,
+                      "text": "{@i18n>ktAl}"
+                    },
+                    "mailButton": {
+                      "press": "zfi007mutabakat.zfi007mutabakat.ext.controller.mailButton.send_mail",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": true,
+                      "text": "E-Posta Gönder"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ZFI007_R_MUS_SAT_MUTABAKATObjectPage": {
+          "type": "Component",
+          "id": "ZFI007_R_MUS_SAT_MUTABAKATObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/ZFI007_R_MUS_SAT_MUTABAKAT"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  }
+}
