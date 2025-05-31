@@ -1,0 +1,14 @@
+@EndUserText.label : 'FI008 - Müşteri Mutabakat Request'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+define structure zfi007_s_mus_sat_request {
+
+  xdp_template       : abap.string(0);
+  xml_data           : abap.string(0);
+  form_type          : abap.string(0);
+  form_locale        : abap.string(0);
+  tagged_pdf         : abap.string(0);
+  embed_font         : abap.string(0);
+  change_not_allowed : abap_boolean;
+  print_not_allowed  : abap_boolean;
+
+}
