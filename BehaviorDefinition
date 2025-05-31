@@ -1,0 +1,16 @@
+unmanaged implementation in class zfi007_cl_mus_sat_mutabakat unique;
+strict ( 1 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for ZFI007_R_MUS_SAT_MUTABAKAT //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) customer, supplier;
+  action print parameter zfi007_s_mus_sat_print result [1] zfi007_e_mutabakat_result;
+  action send_mail parameter zfi007_s_mus_sat_print;
+}
