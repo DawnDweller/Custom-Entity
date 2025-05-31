@@ -1,0 +1,29 @@
+<?sap.transform simple?>
+<tt:transform xmlns:tt="http://www.sap.com/transformation-templates" xmlns:ddic="http://www.sap.com/abapxml/types/dictionary" xmlns:def="http://www.sap.com/abapxml/types/defined">
+
+  <tt:root name="ROOT"/>
+  <tt:root name="Form"/>
+
+  <tt:template>
+
+
+    <form1>
+      <CompanyCodeName tt:value-ref=".Form.CompanyCodeName"/>
+      <CompanyCode tt:value-ref=".Form.CompanyCode"/>
+      <Alici tt:value-ref=".Form.Alici"/>
+      <VergiDairesi tt:value-ref=".Form.VergiDairesi"/>
+      <VergiNumarasi tt:value-ref=".Form.VergiNumarasi"/>
+      <Tel tt:value-ref=".Form.Tel"/>
+      <Faks tt:value-ref=".Form.Faks"/>
+      <Tarih_sys tt:value-ref=".Form.Tarih_sys"/>
+      <Tarih tt:value-ref=".Form.Tarih"/>
+      <ParaMiktari tt:value-ref=".Form.ParaMiktari"/>
+      <AlacakVerecek tt:value-ref=".Form.AlacakVerecek"/>
+      <ePosta tt:value-ref=".Form.ePosta"/>
+    </form1>
+
+
+
+  </tt:template>
+
+</tt:transform>
