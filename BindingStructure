@@ -1,0 +1,19 @@
+@EndUserText.label : 'FI008 - Müşteri Mutabakat Binding'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+define structure zfi007_s_mus_sat_binding {
+
+  companycodename : butxt;
+  companycode     : bukrs;
+  alici           : char10;
+  vergidairesi    : stcd1;
+  verginumarasi   : stcd2;
+  tel             : telf1;
+  faks            : telfx;
+  tarih_sys       : abap.dats;
+  tarih           : abap.dats;
+  @Semantics.amount.currencyCode : 'zfi007_a_mus_sat.currency'
+  paramiktari     : abap.curr(13,2);
+  alacakverecek   : char7;
+  eposta          : zfi006_e_email;
+
+}
